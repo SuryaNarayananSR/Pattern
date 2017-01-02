@@ -130,6 +130,7 @@
             this.Text = "Math Data-Extracter";
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion

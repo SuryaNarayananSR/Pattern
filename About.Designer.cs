@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(About));
             this.lakshya = new System.Windows.Forms.PictureBox();
-            this.SG = new System.Windows.Forms.PictureBox();
             this.aboutInfo = new System.Windows.Forms.TextBox();
+            this.SG = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.lakshya)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SG)).BeginInit();
             this.SuspendLayout();
@@ -41,20 +41,10 @@
             this.lakshya.Image = ((System.Drawing.Image)(resources.GetObject("lakshya.Image")));
             this.lakshya.Location = new System.Drawing.Point(12, 203);
             this.lakshya.Name = "lakshya";
-            this.lakshya.Size = new System.Drawing.Size(108, 73);
+            this.lakshya.Size = new System.Drawing.Size(125, 83);
             this.lakshya.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.lakshya.TabIndex = 0;
             this.lakshya.TabStop = false;
-            // 
-            // SG
-            // 
-            this.SG.Image = ((System.Drawing.Image)(resources.GetObject("SG.Image")));
-            this.SG.Location = new System.Drawing.Point(342, 203);
-            this.SG.Name = "SG";
-            this.SG.Size = new System.Drawing.Size(121, 86);
-            this.SG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.SG.TabIndex = 1;
-            this.SG.TabStop = false;
             // 
             // aboutInfo
             // 
@@ -70,6 +60,16 @@
             this.aboutInfo.TabStop = false;
             this.aboutInfo.Text = resources.GetString("aboutInfo.Text");
             // 
+            // SG
+            // 
+            this.SG.Image = ((System.Drawing.Image)(resources.GetObject("SG.Image")));
+            this.SG.Location = new System.Drawing.Point(302, 203);
+            this.SG.Name = "SG";
+            this.SG.Size = new System.Drawing.Size(190, 83);
+            this.SG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.SG.TabIndex = 1;
+            this.SG.TabStop = false;
+            // 
             // About
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -79,6 +79,7 @@
             this.Controls.Add(this.SG);
             this.Controls.Add(this.lakshya);
             this.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "About";
             this.Text = "About";
             ((System.ComponentModel.ISupportInitialize)(this.lakshya)).EndInit();
@@ -89,7 +90,7 @@
         }
         #endregion
         private System.Windows.Forms.PictureBox lakshya;
-        private System.Windows.Forms.PictureBox SG;
         private System.Windows.Forms.TextBox aboutInfo;
+        private System.Windows.Forms.PictureBox SG;
     }
 }

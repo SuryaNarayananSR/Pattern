@@ -10,22 +10,26 @@ namespace Patern
         String dest;
         public Forage_data()
         {
-            InitializeComponent();
-            this.Icon = new Icon("C:/Users/104752/documents/visual studio 2012/Projects/Patern/Patern/Data+Mining.ico");
+            try
+            {
+                InitializeComponent();
+                this.Icon = new Icon("C:/Users/104752/documents/visual studio 2012/Projects/Patern/Patern/DM.ico");
+            }
+            catch (Exception ex) { System.Diagnostics.Debug.WriteLine("Exception : " + ex); }
         }
 
         private void frgData_Click(object sender, EventArgs e)
         {
             try
             {
-                source = srcPath.Text.Replace("\\","\\\\");
-                dest = desPath.Text.Replace("\\", "\\\\");
+                source = srcPath.Text.Replace(@"\","/");
+                dest = desPath.Text.Replace(@"\", "/");
                 Forage get = new Forage(source, dest);
                 get.obtain();
                 //Closing the files
                 get.destroy();
 
-                MessageBox.Show("Success");
+                MessageBox.Show("Success. Output Location : " + dest);
             }
             catch(Exception ex)
             {
@@ -35,12 +39,12 @@ namespace Patern
 
         private void srcPath_TextChanged(object sender, EventArgs e)
         {
-            srcTip.SetToolTip(srcPath, "Sample Loaction :- 'C:\\math.xml'");
+            srcTip.SetToolTip(srcPath, @"Sample Loaction :- 'C:\math.xml'");
         }
 
         private void desPath_TextChanged(object sender, EventArgs e)
         {
-            desTip.SetToolTip(desPath, "Sample Loaction :- 'C:\\output.txt");
+            desTip.SetToolTip(desPath, @"Sample Loaction :- 'C:\output.txt");
         }
 
         private void about_Click(object sender, EventArgs e)

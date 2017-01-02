@@ -8,8 +8,11 @@ namespace Patern
     {
         public About()
         {
-            InitializeComponent();
-            this.Icon = new Icon("C:/Users/104752/documents/visual studio 2012/Projects/Patern/Patern/Data+Mining.ico");
+            try
+            {
+                InitializeComponent();
+            }
+            catch (Exception ex) { System.Diagnostics.Debug.WriteLine("Exception : " + ex); }
         }
 
     }

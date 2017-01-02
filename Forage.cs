@@ -20,26 +20,31 @@ namespace Patern
 
         internal Forage(String s, String d)
         {
-            desPath = d;
-            srcPath = s;
-            //temp file to store intermidiate data - This file contains the Source file data without blank spaces
-            srcNew = "c:\\test1.txt";
+            try
+            {
+                desPath = d;
+                srcPath = s;
+                //temp file to store intermidiate data - This file contains the Source file data without blank spaces
+                srcNew = @"c:\test1.txt";
+                //System.IO.Directory.GetCurrentDirectory()
 
-            //Destroying the space 
-            sr = new StreamReader(srcPath);
-            spaceBust();
-            sr.Close();
+                //Destroying the space 
+                sr = new StreamReader(srcPath);
+                spaceBust();
+                sr.Close();
 
-            //obtaining the file to be foraged
-            sr = new StreamReader(srcNew);
+                //obtaining the file to be foraged
+                sr = new StreamReader(srcNew);
 
-            //Creating new empty text file
-            sw = File.CreateText(desPath);
-            sw.Write("");
-            sw.Close();
+                //Creating new empty text file
+                sw = File.CreateText(desPath);
+                sw.Write("");
+                sw.Close();
 
-            //open the text file in append mode
-            sw = File.AppendText(desPath);
+                //open the text file in append mode
+                sw = File.AppendText(desPath);
+            }
+            catch (Exception ex) { System.Diagnostics.Debug.WriteLine("Constructor Exception : " + ex); }
         }
 
         internal void destroy()
@@ -161,8 +166,6 @@ namespace Patern
                         sw.WriteLine("");
                     }
                 }
-
-                System.Diagnostics.Debug.WriteLine("Success Pal");
             }
             catch (Exception ex)
             {
